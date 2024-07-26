@@ -47,7 +47,7 @@ async function GET(request: NextRequest) {
 
         UNION
 
-        // Bookmarked Tweets
+        // Bookmarked Posts
         MATCH (u:User {username: $username})
         MATCH (post:Post)
         WHERE (u)-[:BOOKMARKED]->(post)
@@ -60,7 +60,7 @@ async function GET(request: NextRequest) {
 
         UNION
 
-        // Liked Tweets
+        // Liked Posts
         MATCH (u:User {username: $username})
         MATCH (post:Post)
         WHERE (u)-[:LIKES]->(post)
@@ -73,7 +73,7 @@ async function GET(request: NextRequest) {
 
         UNION
 
-        // Reposted Tweets
+        // Reposted Posts
         MATCH (u:User {username: $username})
         MATCH (post:Post)
         WHERE (u)-[:REPOSTS]->(post)
